@@ -1,48 +1,55 @@
 # Guia de Instalacion y configuracion de Windows Terminal:
 
-1. Instalaciones de Microsoft Store
+1.  Instalamos desde Microsoft Store:
 
     - Terminal
     - PowerShell
 
-2. Configuracion de Windows Terminal
+2.  Establecemos PowerShell como predeterminado en Windows Terminal:
 
-    Establecer PowerShell como predeterminado:
     1. Ctrl+,
     2. Inicio\Perfil Predeterminado -> PowerShell
 
-    Instalacion de la fuente
-    1. Acceder a la pagina web de NerdFonts -> www.nerdfonts.com/font-downloads
-    2. Seleccionar una fuente y descargarla
-    3. Descomprimir el archivo descargado e instalar con clic derecho
+3.  Instalamos la fuente para la PowerShell:
 
-    Configuracion del tipo de fuente
+    1. Accedemos a la pagina web de NerdFonts (www.nerdfonts.com/font-downloads), escogemos una fuente y la descargamos
+    2. Descomprimimos el archivo descargado e instalamos la fuente
+
+4. Configuramos el tipo de fuente de Windows Terminal:
+
     1. Ctrl+,
     2. PowerShell>Apariencia\Tipo de fuente -> Fuente instalada
 
-3. Instalacion y configuracion de OhMyPosh
+5. Instalamos OhMyPosh escribiendo en la terminal el siguiente comando:
 
-    1. Abrir la terminal
-    2. Escribir el siguiente comando en la terminal -> winget install JanDeDobbeleer.OhMyPosh -s winget
-    3. Escribir el siguiente comando en la terminal -> New-Item -Path $PROFILE -Type File -Force
-    4. Acceder a la pagina web de ohmyposh -> ohmyposh.dev/docs/themes
-    5. Seleccionar su tema favorito  y copiar el nombre del mismo
-    6. Escribir el siguiente comando en la terminal editar el archivo de configuracion de PowerShell -> notepad $PROFILE
-    7. Escribir en el archivo las siguientes lineas:
-        oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\NombreTema.omp.json" | Invoke-Expression
-        Import-Module -Name Terminal-Icons
-    8. Cambiar el texto "NombreTema" por el nombre del tema que seleciono y guardar el archivo
-    9. Escribir el siguiente comando en la terminal para recargar la configuracion -> . $PROFILE
+    winget install JanDeDobbeleer.OhMyPosh -s winget
 
-4. Configuracion de la vision de archivos
+6. Escogemos un tema para el prompt:
 
-    1. Escribir en la terminal el siguiente comando para instalar la configuracion -> Install-Module -Name Terminal-Icons -Repository PSGallery
-    2. Escribir Y pulsar Enter para confirmar la instalacion
+    1. Accedemos a la pagina web de OhMyPosh (ohmyposh.dev/docs/themes) y escogemos el tema que mas nos guste
 
-# FIN
+7. Creamos el archivo de configuracion de PowerShell escribiendo el siguiente comando en la terminal:
 
-# Creditos
+    New-Item -Path $PROFILE -Type File -Force
+    notepad $PROFILE
+    
+8. Ponemos la configuracion de PowerShell en el bloc de notas abierto :
+    *Cambiamos la cadena de texto "NombreTema" por el nombre del tema escogido*
+
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\NombreTema.omp.json" | Invoke-Expression
+    Import-Module -Name Terminal-Icons
+
+9. Recargamos la configuracion escribiendo en la terminal el siguiente comando:
+
+    . $PROFILE
+
+10.Instalamos el modulo de vision de archivos escribiendo en la terminal el siguiente comando:
+
+    Install-Module -Name Terminal-Icons -Repository PSGallery
+
+
+# Creditos:
 
     NerdFonts (Distribuidores de las fuentes) -> www.nerdfonts.com
-    OhMyPosh (Creador de promt) -> ohmyposh.dev
+    OhMyPosh (Creador de prompt) -> ohmyposh.dev
     Terminal-Icons (Modulo de iconos de archivos y carpetas) -> github.com/devblackops/Terminal-Icons

@@ -111,3 +111,7 @@
     NerdFonts (Font Distributors) -> www.nerdfonts.com
     OhMyPosh (Prompt creator) -> ohmyposh.dev
     Terminal-Icons (File and folder icon module) -> github.com/devblackops/Terminal-Icons
+    
+--------------------------------------------------------------------------------------------------------
+    
+    [Pastebin-Link](https://pastebin.com/Cddz1498)

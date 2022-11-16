@@ -7,11 +7,17 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 #Gloval variables
 Write-Host "Options: `n  1) Installing `n  2) Updating `n  3) Exit"
 $options=Read-Host "Select option"
+$oldpath = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).path
+$terminalpath = Get-ChildItem -Path "$env:USERPROFILE\AppData\Local\Packages\" -Name "Microsoft.WindowsTerminal_*" -Directory
+$jsonpath="$env:USERPROFILE\AppData\Local\Packages\$terminalpath\LocalState\settings.json"
 $theme="catppuccin_macchiato"
 
 #Function
 switch ($options) {
     1 {
+        $newpath = "$oldpath;$env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\"
+        Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value $newpath
+
         Write-Host "Install Windows Terminal and PowerShell"
         winget install --id=Microsoft.WindowsTerminal -e
         winget install --id Microsoft.Powershell --source winget
@@ -19,6 +25,10 @@ switch ($options) {
         Write-Host "Install Firacode font"
         Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
         choco install firacode -y
+
+        Write-Host "Terminal configuration"
+        
+
         
         Write-Host "Install and configure OhMyPosh"
         winget install JanDeDobbeleer.OhMyPosh -s winget

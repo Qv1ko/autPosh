@@ -22,8 +22,8 @@ switch ($options) {
         New-Item -Path $PROFILE -Type File -Force
         Start-Process "https://ohmyposh.dev/docs/themes"
         $theme=Read-Host "Write your favourite theme:"
-        echo ‘oh-my-posh init pwsh --config “$env:POSH_THEMES_PATH\$theme.omp.json” | Invoke-Expression
-        Import-Module -Name Terminal-Icons’ > $PROFILE
+        Start-Process echo 'oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\'+$theme+'.omp.json" | Invoke-Expression
+        Import-Module -Name Terminal-Icons' > $PROFILE
     }
     2 {
         winget upgrade Microsoft.WindowsTerminal -s winget -h --accept-package-agreements --accept-source-agreements

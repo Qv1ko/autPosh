@@ -23,7 +23,7 @@ switch ($options) {
             Start-Process "ms-appinstaller:?source=https://aka.ms/getwinget"
             $wiid = (Get-Process AppInstaller).Id
 	        Wait-Process -Id $wiid
-            # Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+            . $PROFILE
         }
 
         if (Test-Path $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\wt.exe){
@@ -32,6 +32,7 @@ switch ($options) {
         else{
             Write-Host "Install Windows Terminal"
             winget install --id=Microsoft.WindowsTerminal -e
+            . $PROFILE
         }
 
         if (Test-Path $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\pwsh.exe){
@@ -40,6 +41,7 @@ switch ($options) {
         else{
             Write-Host "Install PowerShell"
             winget install --id Microsoft.Powershell --source winget
+            . $PROFILE
         }
         
         Write-Host "Install Firacode font"
@@ -63,16 +65,18 @@ switch ($options) {
         Install-PackageProvider NuGet -Force;
         Set-PSRepository PSGallery -InstallationPolicy Trusted
         Install-Module -Name Terminal-Icons -Repository PSGallery
+        . $PROFILE
         
-        Clear-Host
-        (Invoke-WebRequest "https://raw.githubusercontent.com/kiedtl/winfetch/master/winfetch.ps1" -UseBasicParsing).Content.Remove(0,1) | Invoke-Expression
-        Start-Sleep(10)
+        Write-Host "`nFinished`n"
+        Start-Sleep(5)
     }
     2 {
         winget upgrade Microsoft.WindowsTerminal -s winget -h --accept-package-agreements --accept-source-agreements
         winget upgrade Microsoft.Powershell -s winget -h --accept-package-agreements --accept-source-agreements
         winget upgrade JanDeDobbeleer.OhMyPosh -s winget -h --accept-package-agreements --accept-source-agreements
-        Start-Sleep(3)
+        Start-Sleep(2)
+        Clear-Host; (Invoke-WebRequest "https://raw.githubusercontent.com/kiedtl/winfetch/master/winfetch.ps1" -UseBasicParsing).Content.Remove(0,1) | Invoke-Expression
+        Start-Sleep(5)
     }
     3 {
         Write-Host "`nExit...`n"

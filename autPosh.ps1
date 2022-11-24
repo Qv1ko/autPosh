@@ -50,8 +50,7 @@ switch ($options) {
 
         Write-Host "Terminal configuration"
         $terminalpath = Get-ChildItem -Path "$env:USERPROFILE\AppData\Local\Packages\" -Name "Microsoft.WindowsTerminal_*" -Directory
-        $jsonpath="$env:USERPROFILE\AppData\Local\Packages\$terminalpath\LocalState\settings.json"
-        Write-Output "`"defaultProfile`": `"{5fb123f1-af88-5b5c-8953-d14a8def1978}`",`n`"profiles`":`n`t{`n`t`t`"defaults`":`n`t`t{`n`t`t`t`"fontFace`":`"Fira Code`"`n`t`t},`n`t`t`"list`":`n`t`t[]`n`t}"  | Out-File $jsonpath
+        Move-Item -Path .\settings.json -Destination $env:USERPROFILE\AppData\Local\Packages\$terminalpath\LocalState\ -PassThru
         
         Write-Host "Install and configure OhMyPosh"
         winget install JanDeDobbeleer.OhMyPosh -s winget

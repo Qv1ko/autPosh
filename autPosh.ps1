@@ -22,29 +22,27 @@ if (!(Test-Path $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\winget.exe)
 if (!(Test-Path $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\wt.exe)) {
     Write-Host "Install Windows Terminal"
     winget install --id=Microsoft.WindowsTerminal -e --accept-package-agreements --accept-source-agreements
-    . $PROFILE
 }
 
 #powershell install condition
 if (!(Test-Path $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\pwsh.exe)) {
     Write-Host "Install PowerShell"
     winget install --id Microsoft.Powershell --source winget --accept-package-agreements --accept-source-agreements
-    . $PROFILE
 }
 
 #terminal font installing
-Write-Host "Install !Firacode! font"
+Write-Host "Install Mononoki font"
 Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-choco install firacode -y
+choco install nerd-fonts-mononoki -y
 
     #terminal configuration
     Write-Host "Terminal configuration"
-    $wd = Get-Location
     if(!(Test-Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_*")) {
         New-Item "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState" -ItemType Directory
     }
+    $wd = Get-Location
     $terminalpath = Get-ChildItem -Path "$env:USERPROFILE\AppData\Local\Packages\" -Name "Microsoft.WindowsTerminal_*" -Directory
-    Copy-Item -Path $wd\settings.json -Destination $env:USERPROFILE\AppData\Local\Packages\$terminalpath\LocalState\ -PassThru
+    Copy-Item -Path "$wd\settings.json" -Destination "$env:USERPROFILE\AppData\Local\Packages\$terminalpath\LocalState\" -PassThru
 
 #ohmyposh install and configuration
 Write-Host "Install and configure OhMyPosh"

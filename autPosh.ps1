@@ -54,5 +54,6 @@ Set-PSRepository PSGallery -InstallationPolicy Trusted
 Install-Module -Name Terminal-Icons -Repository PSGallery
 
 #exit
+wt -w 0 nt pwsh -NoExit -c {(Invoke-WebRequest "https://raw.githubusercontent.com/kiedtl/winfetch/master/winfetch.ps1" -UseBasicParsing).Content.Remove(0,1) | Invoke-Expression}
 Read-Host "Pulse Enter para salir"
 Exit

@@ -35,14 +35,11 @@ Write-Host "Install Mononoki font"
 Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco install nerd-fonts-mononoki -y
 
-    #terminal configuration
-    Write-Host "Terminal configuration"
-    if(!(Test-Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_*")) {
-        New-Item "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState" -ItemType Directory
-    }
-    $wd = Get-Location
-    $terminalpath = Get-ChildItem -Path "$env:USERPROFILE\AppData\Local\Packages\" -Name "Microsoft.WindowsTerminal_*" -Directory
-    Copy-Item -Path "$wd\settings.json" -Destination "$env:USERPROFILE\AppData\Local\Packages\$terminalpath\LocalState\" -PassThru
+#terminal configuration
+Write-Host "Terminal configuration"
+$env:Path += ";$PWD"
+$wd = Get-Location
+Copy-Item -Path "$wd\settings.json" -Destination "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" -PassThru
 
 #ohmyposh install and configuration
 Write-Host "Install and configure OhMyPosh"

@@ -1,6 +1,6 @@
 #Administrator PowerShell
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
-	Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
 	Exit
 }
 
@@ -37,9 +37,7 @@ choco install nerd-fonts-mononoki -y
 
 #terminal configuration
 Write-Host "Terminal configuration"
-$env:Path += ";$PWD"
-$wd = Get-Location
-Copy-Item -Path "$wd\settings.json" -Destination "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" -PassThru
+Copy-Item -Path $PSCommandPath\..\settings.json -Destination $env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\ -Force
 
 #ohmyposh install and configuration
 Write-Host "Install and configure OhMyPosh"

@@ -15,7 +15,7 @@ if (!(Test-Path "$env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\winget.exe
     Start-Process "ms-appinstaller:?source=https://aka.ms/getwinget"
     $InstallId = (Get-Process AppInstaller).Id
     Wait-Process -Id $InstallId
-    #. $PROFILE
+    . $PROFILE
 }
 
 #windows terminal install condition
@@ -45,7 +45,7 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 New-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Type File -Force
 Start-Process "https://ohmyposh.dev/docs/themes"
 $PoshTheme=Read-Host "Write your favourite theme"
-Write-Output "oh-my-posh init pwsh --config `"$env:POSH_THEMES_PATH\$PoshTheme`.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+Write-Output "oh-my-posh init pwsh --config `"$env:POSH_THEMES_PATH\$PoshTheme``.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
 
 #module icons installing
 Write-Host "Install icons module"

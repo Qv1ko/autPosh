@@ -18,7 +18,6 @@ switch($Option) {
             Start-Process "ms-appinstaller:?source=https://aka.ms/getwinget"
             $InstallId = (Get-Process AppInstaller).Id
             Wait-Process -Id $InstallId
-            . $PROFILE
         }
 
         #windows terminal install condition
@@ -48,7 +47,7 @@ switch($Option) {
         New-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Type File -Force
         Start-Process "https://ohmyposh.dev/docs/themes"
         $PoshTheme=Read-Host "Write your favourite theme"
-        Write-Output "oh-my-posh init pwsh --config `"$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
 
         #module icons installing
         Write-Host "Install icons module"
@@ -58,7 +57,7 @@ switch($Option) {
 
         #exit
         wt -w 0 nt pwsh -NoExit
-        exit
+        cls; . $PROFILE
     }
     2 {
         Write-Host "Updating..."
@@ -71,11 +70,11 @@ switch($Option) {
     3 {
         Start-Process "https://ohmyposh.dev/docs/themes"
         $PoshTheme=Read-Host "Write your favourite theme"
-        Write-Output "oh-my-posh init pwsh --config `"$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
         wt -w 0 nt pwsh -NoExit
+        cls; . $PROFILE
     }
     4 {
-
     }
     Default {
         Write-Host "Please select valid option"

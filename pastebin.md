@@ -50,4 +50,4 @@
 * [OhMyPosh](ohmyposh.dev) (Creador del prompt)
 * [Terminal-Icons](github.com/devblackops/Terminal-Icons) (Módulo de iconos de archivos y carpetas)
 
-## Link del [Pastebin](https://pastebin.com/Cddz1498)
+### Link del [Pastebin](https://pastebin.com/Cddz1498)

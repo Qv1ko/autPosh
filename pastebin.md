@@ -20,7 +20,7 @@
 5. Instalamos **OhMyPosh**:
     1. Abrir Windows Terminal
     2. Escribir el comando `Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))` para instalar OhMyPosh en el sistema
-    3.Recargar perfil de PowerShell escribiendo en Windows Terminal el comando `. $PROFILE`
+    3. Recargar perfil de PowerShell escribiendo en Windows Terminal el comando `. $PROFILE`
 6. Escoger tema para el **prompt** accediendo a la página web de [OhMyPosh](https://ohmyposh.dev/docs/themes)
 
 7. Crear y editar **archivo** de **configuración** de PowerShell:

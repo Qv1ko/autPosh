@@ -4,7 +4,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	Exit
 }
 
-$Option=Read-Host "(1) Install, (2) Updating, (3) Theme selector, (4) Uninstall`nSelect option"
+$Option=Read-Host "(1) Install, (2) Theme selector, (3) Uninstall`nSelect option"
 switch($Option) {
     1 {
         #path adding
@@ -60,23 +60,15 @@ switch($Option) {
         cls; . $PROFILE
     }
     2 {
-        Write-Host "Updating..."
-        winget upgrade Microsoft.WindowsTerminal -s winget -h --accept-package-agreements --accept-source-agreements | out-null
-        winget upgrade PowerShell -s winget -h --accept-package-agreements --accept-source-agreements cf | out-null
-        winget upgrade JanDeDobbeleer.OhMyPosh -s winget -h --accept-package-agreements --accept-source-agreements | out-null
-        Clear-Host
-        wt -w 0 nt -p "pwsh" -NoExit
-    }
-    3 {
         Start-Process "https://ohmyposh.dev/docs/themes"
         $PoshTheme=Read-Host "Write your favourite theme"
         Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
         wt -w 0 nt pwsh -NoExit
         cls; . $PROFILE
     }
-    4 {
-    }
-    Default {
+    3 {
+        
+    } Default {
         Write-Host "Please select valid option"
     }
 }

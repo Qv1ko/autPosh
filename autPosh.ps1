@@ -57,7 +57,7 @@ if($Option==1) {
     #exit
     . $PROFILE
     wt -w 0 nt -NoExit
-} else if($Option==2) {
+} elseif($Option==2) {
     Start-Process "https://ohmyposh.dev/docs/themes"
     $PoshTheme=Read-Host "Write your favourite theme"
     Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"

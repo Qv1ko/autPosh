@@ -4,6 +4,31 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	Exit
 }
 
+# param(
+#     [Parameter(Mandatory=$false)]
+#     [switch]$shouldAssumeToBeElevated,
+
+#     [Parameter(Mandatory=$false)]
+#     [String]$workingDirOverride
+# )
+# if(-not($PSBoundParameters.ContainsKey('workingDirOverride'))) {
+#     $workingDirOverride = (Get-Location).Path
+# }
+# function Test-Admin {
+#     $currentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())
+#     $currentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
+# }
+# if ((Test-Admin) -eq $false)  {
+#     if ($shouldAssumeToBeElevated) {
+#         Write-Output "Elevating did not work :("
+#     } else {
+#         Start-Process powershell.exe -Verb RunAs -ArgumentList ('-noprofile -noexit -file "{0}" -shouldAssumeToBeElevated -workingDirOverride "{1}"' -f ($myinvocation.MyCommand.Definition, "$workingDirOverride"))
+#     }
+#     exit
+# }
+# Set-Location "$workingDirOverride"
+
+
 $Option=Read-Host "(1) Install, (2) Theme selector`nSelect option"
 if($Option==1) {
     #path adding

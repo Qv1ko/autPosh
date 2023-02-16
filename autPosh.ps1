@@ -5,7 +5,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 }
 
 $Option=Read-Host "(1) Install, (2) Theme selector`nSelect option"
-if($Option==1) {
+if($Option -eq 1) {
     #Path configuration
     $OldPath = (Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" -Name PATH).path
     $NewPath = "$OldPath;$env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\"
@@ -49,7 +49,7 @@ if($Option==1) {
     #Exit
     . $PROFILE
     wt -w 0 nt -NoExit
-} elseif($Option==2) {
+} elseif($Option -eq 2) {
     #OhMyPosh theme configuration
     Start-Process "https://ohmyposh.dev/docs/themes"
     $PoshTheme=Read-Host "Write your favourite theme"

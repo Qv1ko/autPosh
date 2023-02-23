@@ -2,7 +2,7 @@
 
 1. Instalar **Windows Terminal** y **PowerShell** desde Microsoft Store
 2. Establecer **PowerShell** como **predeterminado** en Windows Terminal:
-    1. Abrir Windows Terminal
+    1. Abrir Terminal
     2. Presionar las teclas `Ctrl`+`,` para abrir la configuración de Windows Terminal
     3. En la sección "Inicio", buscar la opción "Perfil Predeterminado" y establecer "PowerShell" como valor
 3. **Instalar** una **fuente** para la PowerShell:
@@ -20,7 +20,6 @@
 5. Instalamos **OhMyPosh**:
     1. Abrir Windows Terminal
     2. Escribir el comando `Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))` para instalar OhMyPosh en el sistema
-    3. Recargar perfil de PowerShell escribiendo en Windows Terminal el comando `. $PROFILE`
 6. Escoger tema para el **prompt** accediendo a la página web de [OhMyPosh](https://ohmyposh.dev/docs/themes)
 
 7. Crear y editar **archivo** de **configuración** de PowerShell:
@@ -38,8 +37,8 @@
 
 ## Créditos:
 
-* [NerdFonts](https://www.nerdfonts.com) (Distribuidores de las fuentes)
-* [OhMyPosh](https://ohmyposh.dev) (Creador del prompt)
-* [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (Módulo de iconos de archivos y carpetas)
+* [NerdFonts](https://www.nerdfonts.com) (Web de las fuentes)
+* [OhMyPosh](https://ohmyposh.dev) (Web del prompt)
+* [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (Proyecto del módulo de iconos de archivos y carpetas)
 
 ### Link al [Pastebin](https://pastebin.com/Cddz1498)

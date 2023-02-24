@@ -1,4 +1,4 @@
-# Guia de instalación y configuración de Windows Terminal:
+# Guía de instalación y configuración de Windows Terminal:
 
 1. Instalar **Windows Terminal** y **PowerShell** desde Microsoft Store
 2. Establecer **PowerShell** como **predeterminado** en Windows Terminal:

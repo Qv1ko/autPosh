@@ -38,7 +38,7 @@
 ## Créditos:
 
 * [NerdFonts](https://www.nerdfonts.com) (Web de las fuentes)
-* [OhMyPosh](https://ohmyposh.dev) (Web del prompt)
+* [OhMyPosh](https://ohmyposh.dev) (Proyecto del prompt)
 * [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (Proyecto del módulo de iconos de archivos y carpetas)
 
-### Link al [Pastebin](https://pastebin.com/Cddz1498)
+### Link al [Pastebin](https://pastebin.com/8dYnTyRw)

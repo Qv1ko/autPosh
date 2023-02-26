@@ -45,9 +45,6 @@ if($Option -eq 1) {
     Install-PackageProvider NuGet -Force
     Set-PSRepository PSGallery -InstallationPolicy Trusted
     Install-Module -Name Terminal-Icons -Repository PSGallery
-    #Exit
-    # . $PROFILE
-    # wt -w 0 nt -NoExit
 } elseif($Option -eq 2) {
     #OhMyPosh theme configuration
     Start-Process "https://ohmyposh.dev/docs/themes"

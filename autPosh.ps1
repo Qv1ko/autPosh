@@ -32,7 +32,6 @@ if($Option -eq 1) {
     Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString("https://chocolatey.org/install.ps1"))
     choco install nerd-fonts-mononoki -y
     #Terminal configuration
-    Write-Host "`n`n`tTerminal configuration`n"
     Copy-Item -Path "$PSCommandPath\..\settings.json" -Destination "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\" -Force
     #OhMyPosh configuration and installation
     Write-Host "`n`n`tOhMyPosh installation and configuration`n"
@@ -47,8 +46,8 @@ if($Option -eq 1) {
     Set-PSRepository PSGallery -InstallationPolicy Trusted
     Install-Module -Name Terminal-Icons -Repository PSGallery
     #Exit
-    . $PROFILE
-    wt -w 0 nt -NoExit
+    # . $PROFILE
+    # wt -w 0 nt -NoExit
 } elseif($Option -eq 2) {
     #OhMyPosh theme configuration
     Start-Process "https://ohmyposh.dev/docs/themes"

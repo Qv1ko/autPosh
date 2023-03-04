@@ -3,7 +3,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
 	Exit
 }
-
+#autPosh menu
 $Option=Read-Host "(1) Install, (2) Theme selector`nSelect option"
 if($Option -eq 1) {
     #Path configuration

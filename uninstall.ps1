@@ -4,12 +4,12 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	Exit
 }
 #Icons module uninstallation
+Uninstall-Module -Name Terminal-Icons
 Uninstall-Module -Name Terminal-Icons -Repository PSGallery
 #OhMyPosh uninstallation
 winget uninstall JanDeDobbeleer.OhMyPosh -s winget
 Remove-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
 #Font uninstallation
-#Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString("https://chocolatey.org/install.ps1"))
 choco uninstall nerd-fonts-mononoki -y
 #Powershell uninstall condition
 if (Test-Path "$env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\pwsh.exe") {

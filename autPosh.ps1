@@ -62,7 +62,7 @@ do {
         winget uninstall --id Microsoft.Powershell --source winget
         #Windows terminal uninstall condition
         winget uninstall --id=Microsoft.WindowsTerminal -e
-    } elseif($Option -ne 0 && $Option -ne 1 && $Option -ne 2 && $Option -ne 3) {
+    } elseif(($Option -ne 0) -and ($Option -ne 1) -and ($Option -ne 2) -and ($Option -ne 3)) {
         #Error exit
         Write-Host "`n`n`tPlease select valid option`n"
         Start-Sleep(5)

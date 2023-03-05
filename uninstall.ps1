@@ -3,8 +3,6 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
 	Exit
 }
-#Icons module uninstallation
-Uninstall-Module -Name Terminal-Icons
 #OhMyPosh uninstallation
 winget uninstall JanDeDobbeleer.OhMyPosh -s winget
 Remove-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force

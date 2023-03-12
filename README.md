@@ -8,10 +8,21 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
 * 🇪🇸 **Español**
 * 🇺🇸 [Inglés](./README-en.md)
 
----
+## Instalación
+1. Clona el repositorio en su sistema
+    ```shell
+    git clone https://github.com/Qv1ko/autPosh.git
+    ```
+2. Entra dentro del directorio de autPosh
 
-## Guía de instalación manual
+## Uso
+1. Ejecuta el script autPosh.ps1 como administrador
+2. Selecciona una opcion:
+    * Auto instalación y configuración
+    * Selector del tema del prompt
+    * Desinstalador
 
+## Guía de configuración manual
 1. Instalar **Windows Terminal** y **PowerShell** desde Microsoft Store
 2. Establecer **PowerShell** como **predeterminado** en Windows Terminal:
     1. Abrir Terminal
@@ -23,11 +34,11 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
     3. Descomprimir el archivo descargado
     4. Abrir el archivo de la fuente
     5. Seleccionar todos los archivos excluyendo "LICENSE.txt" y "readme.md"
-    6. Hacer clic derecho y seleccionar la opcion de "Instalar" para instalar la fuente en nuestro sistema
+    6. Hacer clic derecho y seleccionar la opción de "Instalar" para instalar la fuente en nuestro sistema
 4. **Establecer** la **fuente** de PowerShell en Windows Terminal:
     1. Abrir Windows Terminal
     2. Presionar las teclas `Ctrl`+`,` para abrir la configuración de Windows Terminal
-    3. Acceder ha "Apariencia", dentro del apartado "Configuracion adicional" de "PowerShell" en la sección "Perfiles"
+    3. Acceder a "Apariencia", dentro del apartado "Configuración adicional" de "PowerShell" en la sección "Perfiles"
     4. Establecer como valor en la opción "Tipo de fuente" la fuente instalada
 5. Instalamos **OhMyPosh**:
     1. Abrir Windows Terminal
@@ -48,8 +59,8 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
 
 **Link al [Pastebin](https://pastebin.com/8dYnTyRw)**
 
-## Créditos:
-
+## Créditos
 * [NerdFonts](https://www.nerdfonts.com) (Web de las fuentes)
+* [Mononoki](https://github.com/madmalik/mononoki) (Proyecto de la fuente)
 * [OhMyPosh](https://ohmyposh.dev) (Proyecto del prompt)
 * [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (Proyecto del módulo de iconos de archivos y carpetas)

@@ -14,6 +14,7 @@ This project deals with a script that can be used to configure the Windows termi
     git clone https://github.com/Qv1ko/autPosh.git
     ```
 2. Enter the autPosh directory
+3. Execute in a PowerShell Terminal as administrator the command `Set-ExecutionPolicy Unrestricted`
 
 ## Usage
 1. Run autPosh.ps1 script as administrator

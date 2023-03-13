@@ -14,6 +14,7 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
     git clone https://github.com/Qv1ko/autPosh.git
     ```
 2. Entra dentro del directorio de autPosh
+3. Ejecuta en una Terminal de PowerShell como administrador el comando `Set-ExecutionPolicy Unrestricted`
 
 ## Uso
 1. Ejecuta el script autPosh.ps1 como administrador

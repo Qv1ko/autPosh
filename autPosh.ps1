@@ -37,9 +37,9 @@ do {
         #OhMyPosh configuration and installation
         Write-Host "`n`n`tOhMyPosh installation and configuration`n"
         winget install JanDeDobbeleer.OhMyPosh -s winget
-        New-Item -Path $PROFILE -ItemType File -Force
         Start-Process "https://ohmyposh.dev/docs/themes"
         $PoshTheme=Read-Host "`nWrite your favourite theme"
+	New-Item -Path $PROFILE -ItemType File -Force
         Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File $PROFILE
         #Icons module installation
         Write-Host "`n`n`tIcon module installation`n"

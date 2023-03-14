@@ -39,8 +39,9 @@ do {
         winget install JanDeDobbeleer.OhMyPosh -s winget
         Start-Process "https://ohmyposh.dev/docs/themes"
         $PoshTheme=Read-Host "`nWrite your favourite theme"
-	New-Item -Path $PROFILE -ItemType File -Force
-        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File $PROFILE
+	$SettingsFile=$PROFILE
+	New-Item -Path $SettingsFile -ItemType File -Force
+        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File $SettingsFile
         #Icons module installation
         Write-Host "`n`n`tIcon module installation`n"
         Install-PackageProvider NuGet -Force

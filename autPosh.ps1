@@ -6,7 +6,6 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 do {
     #autPosh menu
     $Option=Read-Host "(1) Install, (2) Theme selector (3) Uninstall (0) Exit`nSelect option"
-    $SettingsFile=$PROFILE
     if($Option -eq 1) {
         #Path configuration
         $OldPath=(Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" -Name PATH).path
@@ -38,10 +37,10 @@ do {
         #OhMyPosh configuration and installation
         Write-Host "`n`n`tOhMyPosh installation and configuration`n"
         winget install JanDeDobbeleer.OhMyPosh -s winget
+        New-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -ItemType File -Force
         Start-Process "https://ohmyposh.dev/docs/themes"
         $PoshTheme=Read-Host "`nWrite your favourite theme"
-	    New-Item -Path $SettingsFile -ItemType File -Force
-        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File $SettingsFile
+        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
         #Icons module installation
         Write-Host "`n`n`tIcon module installation`n"
         Install-PackageProvider NuGet -Force
@@ -52,13 +51,13 @@ do {
         #OhMyPosh theme configuration
         Start-Process "https://ohmyposh.dev/docs/themes"
         $PoshTheme=Read-Host "`nWrite your favourite theme"
-        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File $SettingsFile
+        Write-Output "oh-my-posh init pwsh --config `"`$env:POSH_THEMES_PATH\$PoshTheme.omp.json`" | Invoke-Expression`nImport-Module -Name Terminal-Icons" | Out-File "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
         wt -w 0 nt -NoExit
         break
     } elseif($Option -eq 3) {
         #OhMyPosh uninstallation
         winget uninstall JanDeDobbeleer.OhMyPosh -s winget
-        Remove-Item -Path $SettingsFile -Force
+        Remove-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
         #Font uninstallation
         choco uninstall nerd-fonts-mononoki -y
         #Powershell uninstall condition

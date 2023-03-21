@@ -5,8 +5,8 @@ This project deals with a script that can be used to configure the Windows termi
 ![PowerShell 7+](https://img.shields.io/badge/PowerShell-7+-131E2A?style=flat-square&logo=powershell&logoColor=white)
 
 ### README language
-* 🇪🇸 [Spanish](./README.md)
-* 🇺🇸 **English**
+- 🇪🇸 [Spanish](./README.md)
+- 🇺🇸 **English**
 
 ## Installation
 1. Clone the repository on your system
@@ -19,9 +19,9 @@ This project deals with a script that can be used to configure the Windows termi
 ## Usage
 1. Run autPosh.ps1 script as administrator
 2. Select an option:
-    * Auto installation and configuration
-    * Prompt theme selector
-    * Uninstaller
+    - Auto installation and configuration
+    - Prompt theme selector
+    - Uninstaller
 
 ## Manual configuration guide
 1. Installing **Windows Terminal** and **PowerShell** from the Microsoft Store
@@ -61,7 +61,7 @@ This project deals with a script that can be used to configure the Windows termi
 **link to [Pastebin](https://pastebin.com/8dYnTyRw)**
 
 ## Credits
-* [NerdFonts](https://www.nerdfonts.com) (Web of fonts)
-* [Mononoki](https://github.com/madmalik/mononoki) (Project of the Mononoki font)
-* [OhMyPosh](https://ohmyposh.dev) (Project of the prompt)
-* [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (File and folder icons module project)
+- [NerdFonts](https://www.nerdfonts.com) (Web of fonts)
+- [Mononoki](https://github.com/madmalik/mononoki) (Project of the Mononoki font)
+- [OhMyPosh](https://ohmyposh.dev) (Project of the prompt)
+- [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (File and folder icons module project)

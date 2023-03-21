@@ -5,8 +5,8 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
 ![PowerShell 7+](https://img.shields.io/badge/PowerShell-7+-131E2A?style=flat-square&logo=powershell&logoColor=white)
 
 ### Idioma del README
-* 🇪🇸 **Español**
-* 🇺🇸 [Inglés](./README-en.md)
+- 🇪🇸 **Español**
+- 🇺🇸 [Inglés](./README-en.md)
 
 ## Instalación
 1. Clona el repositorio en su sistema
@@ -19,9 +19,9 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
 ## Uso
 1. Ejecuta el script autPosh.ps1 como administrador
 2. Selecciona una opcion:
-    * Auto instalación y configuración
-    * Selector del tema del prompt
-    * Desinstalador
+    - Auto instalación y configuración
+    - Selector del tema del prompt
+    - Desinstalador
 
 ## Guía de configuración manual
 1. Instalar **Windows Terminal** y **PowerShell** desde Microsoft Store
@@ -61,7 +61,7 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
 **Link al [Pastebin](https://pastebin.com/8dYnTyRw)**
 
 ## Créditos
-* [NerdFonts](https://www.nerdfonts.com) (Web de las fuentes)
-* [Mononoki](https://github.com/madmalik/mononoki) (Proyecto de la fuente)
-* [OhMyPosh](https://ohmyposh.dev) (Proyecto del prompt)
-* [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (Proyecto del módulo de iconos de archivos y carpetas)
+- [NerdFonts](https://www.nerdfonts.com) (Web de las fuentes)
+- [Mononoki](https://github.com/madmalik/mononoki) (Proyecto de la fuente)
+- [OhMyPosh](https://ohmyposh.dev) (Proyecto del prompt)
+- [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) (Proyecto del módulo de iconos de archivos y carpetas)

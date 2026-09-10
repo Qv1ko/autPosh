@@ -16,6 +16,8 @@ This project deals with a script that can be used to configure the Windows termi
 2. Enter the autPosh directory
 3. Execute in a PowerShell Terminal as administrator the command `Set-ExecutionPolicy Unrestricted`
 
+> **Note:** The script requires PowerShell 7.0 or higher.
+
 ## Usage
 1. Run autPosh.ps1 script as administrator
 2. Select an option:

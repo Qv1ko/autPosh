@@ -16,6 +16,8 @@ Este proyecto trata de un script con el que se puede configurar la terminal de W
 2. Entra dentro del directorio de autPosh
 3. Ejecuta en una Terminal de PowerShell como administrador el comando `Set-ExecutionPolicy Unrestricted`
 
+> **Nota:** El script requiere PowerShell 7.0 o superior.
+
 ## Uso
 1. Ejecuta el script autPosh.ps1 como administrador
 2. Selecciona una opcion:
